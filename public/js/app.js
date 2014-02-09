@@ -22,7 +22,7 @@ myApp.config(function($routeProvider, $locationProvider) {
 			})
 
 			.when('/schedule', {
-				templateUrl : 'public/schedule.html',
+				templateUrl : 'public/home.html',
 				controller  : 'SwapController'
 			})
 
