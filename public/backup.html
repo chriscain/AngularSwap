@@ -1,0 +1,50 @@
+<div id="schedule">
+	<h1>demo</h1>
+			<div ng-repeat="day in daysOfTheWeek">
+				<div ng-show="currentDay == day.day.which">
+					<h1>Input Schedule</h1>
+					<h3>{{day.day.which}}</h3>
+					<div class="slider-container">
+						<div slider></div>
+					</div>
+					<div class="controls" id="secondary">
+						<a class="right" ng-show="day.next" ng-click="swipeRightSchedule(day)" href="#">{{day.next}} <i class="fa fa-arrow-right"></i></a>
+						<a class="left" ng-show="day.prev" ng-click="swipeLeftSchedule(day)" href="#"><i class="fa fa-arrow-left"></i> {{day.prev}}</a>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div id="confirm-schedule" ng-switch-when="confirm">
+			<h1>Confirm?</h1>
+			<ul>
+				<li class="dayDisplay" ng-repeat="day in daysOfTheWeek">
+					<div class="background-container" ng-style="setAttrs(day)")>
+						<div class="inner">
+							<p class="backgroundText"><span class="start">9:00AM </span><span class="day"> {{day.day.which}} </span><span class="end"> 5:30PM</span></p>
+						</div>		
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div id="dashboard" ng-switch-when="dashboard">
+			<h1>Kitchen</h1>
+			<ul>
+				<li class="dash-item" ng-repeat="business in businesses">
+					<div class="inner">
+						<div class="img-container">
+							<img src="{{business.logo}}" alt="">
+						</div>
+						<div class="text-container">
+							<p class="business">{{business.business}}</p>
+							<p class="distance">{{business.distance}} miles away</p>
+							<p class="hours">Hours at work: {{business.startHour}} - {{business.endHour}}</p>
+						</div>
+						<div class="go-container">
+							<p><i class="fa fa-arrow-right"></i></p>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>

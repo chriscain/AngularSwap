@@ -1,0 +1,17 @@
+<div id="schedule">
+	<h1>demo</h1>
+	<div ng-repeat="day in daysOfTheWeek">
+		<div ng-show="currentDay == day.day.which">
+			<h1>Input Schedule</h1>
+			<h3>{{day.day.which}}</h3>
+			<div class="slider-container">
+				<div slider></div>
+			</div>
+			<div class="controls" id="secondary">
+				<a class="right" ng-show="day.next" ng-click="swipeRightSchedule(day)" href="#">{{day.next}} <i class="fa fa-arrow-right"></i></a>
+				<a class="left" ng-show="day.prev" ng-click="swipeLeftSchedule(day)" href="#"><i class="fa fa-arrow-left"></i> {{day.prev}}</a>
+			</div>
+
+		</div>
+	</div>
+</div>
